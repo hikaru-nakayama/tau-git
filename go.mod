@@ -1,4 +1,4 @@
-module github.com/hikaru-nakayama/tau-git.git
+module github.com/hikaru-nakayama/tau-git
 
 go 1.21.6
 
