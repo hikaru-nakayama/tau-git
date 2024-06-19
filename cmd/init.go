@@ -5,6 +5,7 @@ package cmd
 
 import (
 	"errors"
+	"fmt"
 	"os"
 	"path/filepath"
 
@@ -25,6 +26,15 @@ var initCmd = &cobra.Command{
 		if err := os.Mkdir(dir, 0750); err != nil {
 			return err
 		}
+		obj_dir := filepath.Join(dir, "objects")
+		if err := os.Mkdir(obj_dir, 0750); err != nil {
+			return err
+		}
+		ref_dir := filepath.Join(dir, "refs")
+		if err := os.Mkdir(ref_dir, 0750); err != nil {
+			return err
+		}
+		fmt.Printf("Initialized empty tau repository in %s\n", dir)
 		return nil
 	},
 }
